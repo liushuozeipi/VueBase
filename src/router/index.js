@@ -4,12 +4,25 @@ import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
-export default new Router({
+
+
+let router = new Router({
   routes: [
     {
       path: '/',
       name: 'HelloWorld',
-      component: HelloWorld
+      component: HelloWorld,
+      children:[]
+    },
+    {
+      path:'/reqdemo',
+      name:'ReqDemo',
+      component: () => import('@/views/demo/ReqDemo'),
+      meta:{
+        name:'请求示例'
+      }
     }
   ]
 })
+
+export default router;

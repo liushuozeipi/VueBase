@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { syncSend } from "../src/axios/index.js";
 
 Vue.config.productionTip = false
+
+
+Vue.prototype.syncSend = syncSend;
 
 /* eslint-disable no-new */
 new Vue({
